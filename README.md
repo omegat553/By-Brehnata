@@ -19,7 +19,7 @@ birthday-surprise-template/
     │   ├── foto5.jpg
     │   └── foto6.jpg
     └── music/
-        └── music.mp3
+        └── About You Soundtrack.mp3
 ```
 
 ## Cara mengisi konten
@@ -53,7 +53,7 @@ Format JPG/PNG bisa digunakan, tetapi nama file di HTML harus disesuaikan jika e
 ### 3. Musik
 Masukkan lagu kamu ke:
 
-`assets/music/music.mp3`
+`assets/music/About You Soundtrack.mp3`
 
 Kalau nama file berbeda, ubah bagian `<source>` di `index.html`.
 
