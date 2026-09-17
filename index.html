@@ -1,220 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Birthday surprise website template">
-  <title>Happy Birthday! 🎂</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Montserrat:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A little birthday surprise"><title>On this day...</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- =========================================================
-       TEMPLATE ULANG TAHUN
-       Kamu bisa mengganti semua teks bertanda [ ... ].
-       Foto: assets/images/foto1.jpg sampai foto6.jpg
-       Musik: assets/music/About You Soundtrack.mp3
-       ========================================================= -->
-
-  <div id="loader" class="loader">
-    <div class="loader-heart">♡</div>
-    <p>Menyiapkan kejutan...</p>
-  </div>
-
-  <button id="musicToggle" class="music-toggle" aria-label="Putar atau jeda musik">♫</button>
-  <audio id="bgMusic" loop preload="none">
-    <source src="assets/music/About You Soundtrack.mp3" type="audio/mpeg">
-  </audio>
-
-  <main id="site" class="locked">
-    <!-- 01 OPENING -->
-    <section id="opening" class="section opening">
-      <div class="grain"></div>
-      <div class="floating-heart heart-a">♡</div>
-      <div class="floating-heart heart-b">♡</div>
-      <div class="floating-heart heart-c">♡</div>
-
-      <div class="opening-content">
-        <p class="eyebrow">A LITTLE SURPRISE FOR YOU</p>
-
-        <div id="cake" class="cake-wrap" role="button" tabindex="0" aria-label="Klik kue ulang tahun">
-          <div class="cake-glow"></div>
-          <div class="candle">
-            <div class="flame">
-              <span></span>
-            </div>
-          </div>
-          <div class="cake-top"></div>
-          <div class="cake-body">
-            <div class="cake-icing"></div>
-            <div class="cake-line line-1"></div>
-            <div class="cake-line line-2"></div>
-            <div class="cake-dot dot-1"></div>
-            <div class="cake-dot dot-2"></div>
-            <div class="cake-dot dot-3"></div>
-          </div>
-          <div class="plate"></div>
-          <div id="smoke" class="smoke">
-            <i></i><i></i><i></i>
-          </div>
-        </div>
-
-        <h1 class="opening-title">Make a wish<span>.</span></h1>
-        <p id="clickHint" class="hint">Klik lilin untuk memulai ✦</p>
-        <p id="scrollHint" class="hint hidden">Lilin sudah padam. Sekarang, scroll perlahan ↓</p>
+<body class="pre-open">
+  <div class="loader-screen" id="loaderScreen"><div class="loader-ring"></div><p>PREPARING A LITTLE UNIVERSE</p></div>
+  <audio id="bgMusic" loop preload="none"><source src="assets/music/About You Soundtrack.mp3" type="audio/mpeg"></audio>
+  <button class="music" id="musicToggle" aria-label="Putar musik">♪</button>
+  <div class="smoke-transition" id="smokeTransition" aria-hidden="true"><i></i><i></i><i></i></div>
+  <main>
+    <section class="hero" id="hero"><div class="stars" id="stars"></div><div class="planet planet-one"></div><div class="planet planet-two"></div><div class="shooting-star"></div>
+      <div class="orb"></div><div class="hero-copy">
+        <p class="eyebrow">SOMETHING SPECIAL HAPPENED</p>
+        <h1 id="heroTitle">on this day<span>...</span></h1>
+        <p class="date">03&nbsp;&nbsp;·&nbsp;&nbsp;09&nbsp;&nbsp;·&nbsp;&nbsp;2026</p>
+        <button class="open-btn" id="openBtn"><span>CLICK FOR THE SURPRISE</span><b>→</b></button>
+        <p class="made">made for someone special ♡</p>
       </div>
+      <div class="corner">A LITTLE SOMETHING</div>
     </section>
-
-    <!-- 02 HAPPY BIRTHDAY -->
-    <section id="birthday" class="section birthday-section reveal-section">
-      <div class="section-number">01</div>
-      <div class="birthday-inner">
-        <p class="eyebrow">TODAY IS ALL ABOUT YOU</p>
-        <h2 class="birthday-title">
-          <span>Happy</span>
-          <strong>Birthday</strong>
-        </h2>
-        <p class="birthday-name">[NAMA]</p>
-        <p class="body-copy">
-          Hari ini adalah hari spesial untuk seseorang yang sangat berarti.
-          Semoga halaman kecil ini bisa menjadi bagian kecil dari senyum kamu hari ini.
-        </p>
-        <div class="scroll-arrow">↓</div>
-      </div>
-    </section>
-
-    <!-- 03 MEMORY WALL -->
-    <section id="memories" class="section memories-section reveal-section">
-      <div class="section-number">02</div>
-      <div class="section-heading">
-        <p class="eyebrow">LITTLE PIECES OF US</p>
-        <h2>Memory Wall</h2>
-        <p>Klik setiap foto untuk melihat ceritanya.</p>
-      </div>
-
-      <div class="memory-grid">
-        <button class="memory-card card-1" data-title="Momen Pertama" data-text="Tulis cerita atau kenangan foto ini di sini.">
-          <img src="assets/images/foto1.jpg" alt="Kenangan 1" onerror="this.onerror=null;this.src='https://placehold.co/800x1000/f8e6e6/76535c?text=FOTO+1'">
-          <span>01</span>
-        </button>
-        <button class="memory-card card-2" data-title="Hari Yang Seru" data-text="Tulis cerita atau kenangan foto ini di sini.">
-          <img src="assets/images/foto2.jpg" alt="Kenangan 2" onerror="this.onerror=null;this.src='https://placehold.co/800x1000/e8edf8/53607b?text=FOTO+2'">
-          <span>02</span>
-        </button>
-        <button class="memory-card card-3" data-title="Senyum Hari Itu" data-text="Tulis cerita atau kenangan foto ini di sini.">
-          <img src="assets/images/foto3.jpg" alt="Kenangan 3" onerror="this.onerror=null;this.src='https://placehold.co/800x1000/f4eddc/786c4e?text=FOTO+3'">
-          <span>03</span>
-        </button>
-        <button class="memory-card card-4" data-title="Random Memory" data-text="Tulis cerita atau kenangan foto ini di sini.">
-          <img src="assets/images/foto4.jpg" alt="Kenangan 4" onerror="this.onerror=null;this.src='https://placehold.co/800x1000/e6f0eb/52695c?text=FOTO+4'">
-          <span>04</span>
-        </button>
-        <button class="memory-card card-5" data-title="One For The Books" data-text="Tulis cerita atau kenangan foto ini di sini.">
-          <img src="assets/images/foto5.jpg" alt="Kenangan 5" onerror="this.onerror=null;this.src='https://placehold.co/800x1000/f0e6f2/705876?text=FOTO+5'">
-          <span>05</span>
-        </button>
-        <button class="memory-card card-6" data-title="Best One" data-text="Tulis cerita atau kenangan foto ini di sini.">
-          <img src="assets/images/foto6.jpg" alt="Kenangan 6" onerror="this.onerror=null;this.src='https://placehold.co/800x1000/e9e5df/625c55?text=FOTO+6'">
-          <span>06</span>
-        </button>
-      </div>
-    </section>
-
-    <!-- 04 TIMELINE -->
-    <section id="timeline" class="section timeline-section reveal-section">
-      <div class="section-number">03</div>
-      <div class="section-heading">
-        <p class="eyebrow">OUR LITTLE STORY</p>
-        <h2>Timeline</h2>
-      </div>
-
-      <div class="timeline">
-        <article class="timeline-item">
-          <div class="timeline-dot"></div>
-          <p class="timeline-date">[TANGGAL / TAHUN]</p>
-          <h3>Awal Cerita</h3>
-          <p>Tulis bagaimana semuanya dimulai.</p>
-        </article>
-        <article class="timeline-item">
-          <div class="timeline-dot"></div>
-          <p class="timeline-date">[TANGGAL / TAHUN]</p>
-          <h3>Momen Yang Diingat</h3>
-          <p>Tulis satu kejadian yang paling berkesan.</p>
-        </article>
-        <article class="timeline-item">
-          <div class="timeline-dot"></div>
-          <p class="timeline-date">[TANGGAL / TAHUN]</p>
-          <h3>More Memories</h3>
-          <p>Tulis cerita lain yang ingin kamu abadikan.</p>
-        </article>
-        <article class="timeline-item">
-          <div class="timeline-dot"></div>
-          <p class="timeline-date">TODAY</p>
-          <h3>Happy Birthday!</h3>
-          <p>Dan cerita kita masih terus berjalan.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- 05 MESSAGE -->
-    <section id="message" class="section message-section reveal-section">
-      <div class="message-card">
-        <p class="eyebrow">A MESSAGE FOR YOU</p>
-        <h2>For someone<br><em>special.</em></h2>
-        <p class="message-copy">
-          [TULIS PESAN PANJANG KAMU DI SINI]
-          <br><br>
-          Semoga semua hal baik datang satu per satu. Semoga tahun ini
-          membawa banyak cerita baru, tawa baru, dan alasan baru untuk bahagia.
-        </p>
-        <p class="signature">— [NAMAMU]</p>
-      </div>
-    </section>
-
-    <!-- 06 DO NOT CLICK -->
-    <section id="surprise" class="section surprise-section reveal-section">
-      <div class="surprise-content">
-        <p class="eyebrow">ONE LAST THING...</p>
-        <h2>DO NOT<br><span>CLICK.</span></h2>
-        <button id="surpriseButton" class="danger-button">Seriously, don't.</button>
-      </div>
-    </section>
-
-    <!-- 07 FINAL -->
-    <section id="final" class="section final-section reveal-section">
-      <div class="confetti" aria-hidden="true"></div>
-      <p class="eyebrow">THE END? NOT REALLY.</p>
-      <h2>Happy Birthday,<br><span>[NAMA]!</span></h2>
-      <p>Here's to another beautiful chapter. ♡</p>
-      <button id="replayButton" class="replay-button">↻ Mulai lagi</button>
-    </section>
+    <div class="reveal" id="surprise">
+      <section class="intro section"><p class="eyebrow">A NOTE FOR YOU</p><h2>Today is<br><em>yours.</em></h2><p class="lead">Di antara begitu banyak hari, ada satu yang layak dirayakan lebih lama. Terima kasih sudah menjadi kamu.</p><span class="line"></span></section>
+      <section class="memories section"><div class="section-head"><p class="eyebrow">LITTLE PIECES</p><h2>Some memories.</h2></div><div class="cards"><article><div class="photo p1">01</div><h3>The beginning</h3><p>Semua cerita indah selalu punya awal.</p></article><article><div class="photo p2">02</div><h3>Small moments</h3><p>Hal-hal kecil yang ternyata berarti.</p></article><article><div class="photo p3">03</div><h3>Still growing</h3><p>Dan masih banyak halaman berikutnya.</p></article></div></section>
+      <section class="letter section"><p class="eyebrow">A LETTER</p><h2>For someone<br><em>special.</em></h2><p>Semoga tahun ini membawa ruang untuk mimpi-mimpi baru, orang-orang baik, dan alasan sederhana untuk tersenyum setiap hari.</p><p class="signature">— [NAMAMU]</p></section>
+      <section class="ending section"><p class="eyebrow">THE BEST IS AHEAD</p><h2>Happy Birthday,<br><em>[NAMA]</em></h2><button class="again" id="again">REPLAY <span>↗</span></button></section>
+    </div>
   </main>
-
-  <!-- Memory Modal -->
-  <div id="memoryModal" class="modal" aria-hidden="true">
-    <div class="modal-backdrop"></div>
-    <div class="modal-box">
-      <button class="modal-close" aria-label="Tutup">×</button>
-      <p id="modalNumber" class="eyebrow">MEMORY</p>
-      <h3 id="modalTitle"></h3>
-      <p id="modalText"></p>
-    </div>
-  </div>
-
-  <!-- Surprise overlay -->
-  <div id="surpriseOverlay" class="surprise-overlay" aria-hidden="true">
-    <div class="surprise-popup">
-      <button id="surpriseClose" class="modal-close" aria-label="Tutup">×</button>
-      <div class="popup-icon">🎉</div>
-      <p class="eyebrow">GOT YOU!</p>
-      <h3>Kan sudah dibilang<br>jangan klik 😭</h3>
-      <p>Tapi karena sudah terlanjur...</p>
-      <button id="goFinal" class="primary-button">Lihat kejutan terakhir →</button>
-    </div>
-  </div>
-
+  <form name="birthday-wish" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="birthday-wish"><input name="bot-field"><textarea name="wish"></textarea>
+  </form>
   <script src="script.js"></script>
-</body>
-</html>
+</body></html>
