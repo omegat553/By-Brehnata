@@ -1,0 +1,606 @@
+/* =====================================================
+   FINAL POLISH
+   MOBILE + PRELOADER + SAFARI FIXES
+===================================================== */
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+html {
+    width: 100%;
+    max-width: 100%;
+
+    background: #070708;
+
+    scroll-behavior: smooth;
+
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+
+    overflow-x: clip;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+
+    -webkit-user-drag: none;
+
+    user-select: none;
+}
+
+button,
+[role="button"] {
+    -webkit-tap-highlight-color: transparent;
+
+    touch-action: manipulation;
+}
+
+
+/* =========================
+   PRELOADING BODY
+========================= */
+
+body.preloading {
+    overflow: hidden !important;
+}
+
+
+/* =====================================================
+   CINEMATIC PRELOADER
+===================================================== */
+
+#sitePreloader {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 999999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle at 50% 40%,
+            rgba(255, 255, 255, 0.045),
+            transparent 32%),
+        #070708;
+
+    color: white;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+
+/* =========================
+   PRELOADER OUT
+========================= */
+
+#sitePreloader.is-done {
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   PRELOADER CONTENT
+========================= */
+
+.preloader-inner {
+    width:
+        min(480px,
+            calc(100vw - 55px));
+
+    text-align: center;
+}
+
+
+/* =========================
+   LITTLE NUMBER
+========================= */
+
+.preloader-index {
+    display: block;
+
+    margin-bottom: 35px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color:
+        rgba(255, 255, 255, 0.28);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.preloader-title {
+    margin: 0;
+
+    font-size:
+        clamp(20px,
+            4vw,
+            34px);
+
+    font-weight: 400;
+
+    letter-spacing: -1px;
+
+    color:
+        rgba(255, 255, 255, 0.92);
+}
+
+
+.preloader-title span {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-style: italic;
+
+    color:
+        rgba(255, 255, 255, 0.35);
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.preloader-status {
+    margin-top: 15px;
+
+    min-height: 18px;
+
+    font-size: 7px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================
+   PROGRESS AREA
+========================= */
+
+.preloader-progress-wrap {
+    position: relative;
+
+    width: 100%;
+
+    margin-top: 45px;
+}
+
+
+/* =========================
+   TRACK
+========================= */
+
+.preloader-track {
+    position: relative;
+
+    width: 100%;
+    height: 1px;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.preloader-bar {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 100%;
+
+    background:
+        rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+        0 0 12px rgba(255, 255, 255, 0.35);
+
+    transition:
+        width 0.35s ease;
+}
+
+
+/* =========================
+   PERCENT
+========================= */
+
+.preloader-percent {
+    display: block;
+
+    margin-top: 15px;
+
+    text-align: right;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 12px;
+
+    color:
+        rgba(255, 255, 255, 0.42);
+}
+
+
+/* =========================
+   DECORATION
+========================= */
+
+.preloader-star {
+    position: absolute;
+
+    color:
+        rgba(255, 255, 255, 0.12);
+
+    animation:
+        preloadStarFloat 5s ease-in-out infinite;
+}
+
+
+.preloader-star-one {
+    top: 18%;
+    left: 12%;
+
+    font-size: 18px;
+}
+
+
+.preloader-star-two {
+    right: 13%;
+    bottom: 20%;
+
+    font-size: 11px;
+
+    animation-delay:
+        -2s;
+}
+
+
+/* =========================
+   BOTTOM TEXT
+========================= */
+
+.preloader-bottom {
+    position: absolute;
+
+    left: 50%;
+    bottom:
+        max(30px,
+            calc(env(safe-area-inset-bottom) + 20px));
+
+    transform:
+        translateX(-50%);
+
+    white-space: nowrap;
+
+    font-size: 6px;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(255, 255, 255, 0.18);
+}
+
+
+/* =====================================================
+   VIEWPORT FIX
+===================================================== */
+
+.opening,
+.birthday {
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+
+/* =========================
+   MAIN SECTIONS
+========================= */
+
+.opening,
+.birthday,
+.memory-intro,
+.gallery-section,
+.timeline-section,
+.chaos-section,
+.letter-section,
+.wish-section,
+.ending-section {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/* =====================================================
+   MUSIC CONTROL SAFE AREA
+===================================================== */
+
+.music-control {
+    right:
+        max(18px,
+            calc(env(safe-area-inset-right) + 12px));
+
+    bottom:
+        max(18px,
+            calc(env(safe-area-inset-bottom) + 12px));
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+
+/* =====================================================
+   LIGHTBOX
+===================================================== */
+
+.lightbox {
+    padding:
+        max(25px,
+            env(safe-area-inset-top)) 20px max(25px,
+            env(safe-area-inset-bottom));
+}
+
+
+.lightbox img {
+    max-width: 92vw;
+
+    max-height: 78vh;
+    max-height: 78dvh;
+
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   TOUCH DEVICES
+===================================================== */
+
+.is-touch #mouseGlow,
+.is-touch .cursor-particle {
+    display: none !important;
+}
+
+
+.is-touch button,
+.is-touch .polaroid,
+.is-touch .candle {
+    cursor: default;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+
+        max-width: 100%;
+
+        overflow-x: hidden;
+    }
+
+
+    /* -------------------------
+       PRELOADER
+    ------------------------- */
+
+    .preloader-inner {
+        width:
+            calc(100vw - 45px);
+    }
+
+
+    .preloader-index {
+        margin-bottom: 28px;
+    }
+
+
+    .preloader-progress-wrap {
+        margin-top: 35px;
+    }
+
+
+    /* -------------------------
+       MUSIC
+    ------------------------- */
+
+    .music-control {
+        transform:
+            scale(0.9);
+
+        transform-origin:
+            bottom right;
+    }
+
+
+    /* -------------------------
+       POLAROIDS
+    ------------------------- */
+
+    .polaroid {
+        max-width:
+            calc(100vw - 40px);
+    }
+
+
+    /* -------------------------
+       BUTTONS
+    ------------------------- */
+
+    #openButton,
+    .make-wish-button,
+    .replay-button {
+        min-height: 52px;
+    }
+
+
+    /* -------------------------
+       LETTER
+    ------------------------- */
+
+    .letter-paper {
+        width: 100%;
+
+        max-width: 100%;
+    }
+
+
+    /* -------------------------
+       CAKE
+    ------------------------- */
+
+    .cake-area {
+        max-width: 100%;
+    }
+
+
+    /* -------------------------
+       FINAL
+    ------------------------- */
+
+    .final-birthday {
+        overflow-wrap: anywhere;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 390px) {
+
+    .letter-title {
+        font-size: 56px;
+    }
+
+
+    .wish-title {
+        font-size: 58px;
+    }
+
+
+    .ending-line-main,
+    .ending-line-soft {
+        font-size: 42px;
+    }
+
+
+    .final-birthday {
+        font-size: 64px;
+    }
+
+
+    .cake-area {
+        transform:
+            scale(0.92);
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+
+}
+
+
+/* =====================================================
+   KEYFRAMES
+===================================================== */
+
+@keyframes preloadStarFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px) rotate(10deg);
+    }
+
+}

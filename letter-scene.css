@@ -1,0 +1,836 @@
+/* =====================================================
+   SCENE 05
+   PERSONAL BIRTHDAY LETTER
+===================================================== */
+
+
+/* =========================
+   LETTER SECTION
+========================= */
+
+.letter-section {
+    position: relative;
+
+    min-height: 1700px;
+
+    padding:
+        150px 7% 170px;
+
+    overflow: hidden;
+
+    z-index: 20;
+
+    background:
+        radial-gradient(circle at 80% 25%,
+            rgba(0, 0, 0, 0.025),
+            transparent 25%),
+        radial-gradient(circle at 15% 75%,
+            rgba(0, 0, 0, 0.018),
+            transparent 30%),
+        #f2efe8;
+
+    color: #171717;
+}
+
+
+/* =========================
+   TRANSITION FROM DARK
+========================= */
+
+.letter-section::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 220px;
+
+    background:
+        linear-gradient(180deg,
+            #070608 0%,
+            rgba(7, 6, 8, 0.85) 15%,
+            rgba(30, 29, 28, 0.45) 40%,
+            rgba(242, 239, 232, 0.35) 70%,
+            #f2efe8 100%);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   SECTION NUMBER
+========================= */
+
+.letter-section-number {
+    position: absolute;
+
+    top: 100px;
+    left: 7%;
+
+    z-index: 5;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(20, 20, 20, 0.35);
+}
+
+
+/* =========================
+   TOP DECORATION
+========================= */
+
+.letter-top-line {
+    position: absolute;
+
+    top: 108px;
+    left: 50%;
+
+    width:
+        min(550px, 40vw);
+
+    height: 1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(0, 0, 0, 0.15),
+            transparent);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.letter-header {
+    position: relative;
+
+    width:
+        min(1000px, 100%);
+
+    margin:
+        130px auto 100px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   EYEBROW
+========================= */
+
+.letter-eyebrow {
+    margin-bottom: 28px;
+
+    font-size: 8px;
+
+    letter-spacing: 7px;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(20, 20, 20, 0.45);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.letter-title {
+    font-size:
+        clamp(65px,
+            9vw,
+            135px);
+
+    font-weight: 400;
+
+    line-height: 0.82;
+
+    letter-spacing: -8px;
+
+    color: #161616;
+}
+
+.letter-title span {
+    display: block;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-style: italic;
+
+    font-weight: 400;
+
+    color:
+        rgba(20, 20, 20, 0.4);
+}
+
+
+/* =========================
+   HEADER NOTE
+========================= */
+
+.letter-header-note {
+    max-width: 430px;
+
+    margin:
+        45px auto 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    line-height: 1.8;
+
+    color:
+        rgba(20, 20, 20, 0.45);
+}
+
+
+/* =========================
+   LETTER PAPER
+========================= */
+
+.letter-paper {
+    position: relative;
+
+    width:
+        min(760px, 100%);
+
+    margin: 0 auto;
+
+    padding:
+        85px 90px 80px;
+
+    background:
+        #faf9f5;
+
+    border:
+        1px solid rgba(0, 0, 0, 0.07);
+
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.08);
+
+    transform:
+        rotate(-0.35deg);
+}
+
+
+/* =========================
+   PAPER CORNER
+========================= */
+
+.letter-paper::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: 28px;
+    right: 32px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 15px;
+
+    color:
+        rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================
+   PAPER NUMBER
+========================= */
+
+.letter-paper-number {
+    position: absolute;
+
+    top: 30px;
+    left: 35px;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    color:
+        rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================
+   DEAR
+========================= */
+
+.letter-dear {
+    margin-bottom: 45px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(34px,
+            4vw,
+            48px);
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    letter-spacing: -1px;
+
+    color: #171717;
+}
+
+
+/* =========================
+   LETTER PARAGRAPHS
+========================= */
+
+.letter-paragraph {
+    margin-bottom: 28px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(16px,
+            1.5vw,
+            18px);
+
+    line-height: 2;
+
+    color:
+        rgba(20, 20, 20, 0.72);
+}
+
+
+/* =========================
+   LETTER REVEAL
+========================= */
+
+.letter-line {
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    filter:
+        blur(7px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s cubic-bezier(0.16,
+            1,
+            0.3,
+            1),
+        filter 1.2s ease;
+}
+
+.letter-line.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    filter:
+        blur(0);
+}
+
+
+/* =========================
+   LETTER DIVIDER
+========================= */
+
+.letter-divider {
+    width: 100%;
+    height: 1px;
+
+    margin:
+        55px 0 45px;
+
+    background:
+        linear-gradient(90deg,
+            rgba(0, 0, 0, 0.15),
+            transparent);
+}
+
+
+/* =========================
+   SIGNATURE AREA
+========================= */
+
+.letter-signature {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    text-align: right;
+}
+
+.signature-small {
+    margin-bottom: 8px;
+
+    font-size: 7px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(0, 0, 0, 0.32);
+}
+
+.signature-name {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        35px;
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    color:
+        rgba(20, 20, 20, 0.85);
+}
+
+
+/* =========================
+   PS
+========================= */
+
+.letter-ps {
+    margin-top: 55px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid rgba(0, 0, 0, 0.07);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 11px;
+
+    font-style: italic;
+
+    color:
+        rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   SIDE TEXT
+========================= */
+
+.letter-side-text {
+    position: absolute;
+
+    right: 40px;
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    writing-mode:
+        vertical-rl;
+
+    font-size: 7px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================
+   DECORATIONS
+========================= */
+
+.letter-star {
+    position: absolute;
+
+    font-family:
+        Georgia,
+        serif;
+
+    color:
+        rgba(0, 0, 0, 0.13);
+
+    animation:
+        letterStarFloat 6s ease-in-out infinite;
+}
+
+.letter-star-one {
+    top: 30%;
+    left: 10%;
+
+    font-size: 19px;
+}
+
+.letter-star-two {
+    top: 55%;
+    right: 11%;
+
+    font-size: 11px;
+
+    animation-delay:
+        -2s;
+}
+
+.letter-star-three {
+    bottom: 15%;
+    left: 15%;
+
+    font-size: 14px;
+
+    animation-delay:
+        -4s;
+}
+
+
+/* =========================
+   LETTER END
+========================= */
+
+.letter-ending {
+    margin-top: 110px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: center;
+}
+
+.letter-ending-text {
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    color:
+        rgba(0, 0, 0, 0.42);
+}
+
+.letter-ending-small {
+    font-size: 7px;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(0, 0, 0, 0.28);
+}
+
+.letter-ending-arrow {
+    margin-top: 5px;
+
+    font-size: 19px;
+
+    color:
+        rgba(0, 0, 0, 0.3);
+
+    animation:
+        letterArrow 1.5s ease-in-out infinite;
+}
+
+
+/* =========================
+   MUSIC CONTROL ON WHITE
+========================= */
+
+.music-control.on-light {
+    border:
+        1px solid rgba(0, 0, 0, 0.15);
+
+    background:
+        rgba(245, 243, 237, 0.72);
+
+    color:
+        #111;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+.music-control.on-light .music-status {
+    color:
+        rgba(0, 0, 0, 0.55);
+}
+
+.music-control.on-light .bar {
+    background:
+        rgba(0, 0, 0, 0.7);
+}
+
+.music-control.on-light:hover {
+    border-color:
+        rgba(0, 0, 0, 0.3);
+
+    background:
+        rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================
+   HEADER REVEAL
+========================= */
+
+.letter-header {
+    opacity: 0;
+
+    transform:
+        translateY(80px);
+
+    filter:
+        blur(12px);
+
+    transition:
+        opacity 1.4s ease,
+        transform 1.4s cubic-bezier(0.16,
+            1,
+            0.3,
+            1),
+        filter 1.4s ease;
+}
+
+.letter-section.active .letter-header {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    filter:
+        blur(0);
+}
+
+
+/* =========================
+   PAPER REVEAL
+========================= */
+
+.letter-paper {
+    opacity: 0;
+
+    transform:
+        translateY(90px) rotate(-1.5deg) scale(0.97);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s cubic-bezier(0.16,
+            1,
+            0.3,
+            1);
+}
+
+.letter-section.active .letter-paper {
+    opacity: 1;
+
+    transform:
+        translateY(0) rotate(-0.35deg) scale(1);
+}
+
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+@keyframes letterStarFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px) rotate(12deg);
+    }
+
+}
+
+
+@keyframes letterArrow {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(7px);
+    }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .letter-section {
+        min-height: 1600px;
+
+        padding:
+            130px 7% 150px;
+    }
+
+    .letter-paper {
+        padding:
+            70px 65px 65px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .letter-section {
+        min-height: auto;
+
+        padding:
+            110px 20px 130px;
+    }
+
+    .letter-section::before {
+        height: 160px;
+    }
+
+    .letter-section-number {
+        top: 70px;
+        left: 25px;
+    }
+
+    .letter-top-line {
+        top: 78px;
+
+        width: 45%;
+    }
+
+    .letter-header {
+        margin:
+            100px auto 70px;
+    }
+
+    .letter-eyebrow {
+        font-size: 7px;
+
+        letter-spacing: 4px;
+    }
+
+    .letter-title {
+        font-size: 64px;
+
+        letter-spacing: -4px;
+    }
+
+    .letter-header-note {
+        max-width: 290px;
+
+        margin-top: 35px;
+
+        font-size: 13px;
+    }
+
+    .letter-paper {
+        padding:
+            70px 28px 50px;
+
+        transform:
+            none;
+    }
+
+    .letter-section.active .letter-paper {
+        transform:
+            translateY(0) scale(1);
+    }
+
+    .letter-dear {
+        font-size: 35px;
+
+        margin-bottom: 35px;
+    }
+
+    .letter-paragraph {
+        font-size: 15px;
+
+        line-height: 1.9;
+    }
+
+    .letter-signature {
+        margin-top: 10px;
+    }
+
+    .signature-name {
+        font-size: 31px;
+    }
+
+    .letter-side-text {
+        display: none;
+    }
+
+    .letter-star-one {
+        left: 5%;
+    }
+
+    .letter-star-two {
+        right: 4%;
+    }
+
+    .letter-ending {
+        margin-top: 80px;
+    }
+
+}

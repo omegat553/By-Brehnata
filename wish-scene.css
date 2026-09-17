@@ -1,0 +1,1094 @@
+/* =====================================================
+   SCENE 06
+   MAKE A WISH
+===================================================== */
+
+
+/* =========================
+   SECTION
+========================= */
+
+.wish-section {
+    position: relative;
+
+    min-height: 1200px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        150px 25px;
+
+    overflow: hidden;
+
+    z-index: 20;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        radial-gradient(circle at 50% 45%,
+            rgba(255, 255, 255, 0.08),
+            transparent 26%),
+        radial-gradient(circle at center,
+            #171719,
+            #070708 68%);
+}
+
+
+/* =========================
+   TRANSITION FROM WHITE
+========================= */
+
+.wish-section::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 260px;
+
+    background:
+        linear-gradient(180deg,
+            #f2efe8 0%,
+            rgba(242, 239, 232, 0.78) 18%,
+            rgba(110, 108, 105, 0.42) 45%,
+            rgba(25, 25, 27, 0.72) 75%,
+            #101012 100%);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   SECTION NUMBER
+========================= */
+
+.wish-section-number {
+    position: absolute;
+
+    top: 110px;
+    right: 7%;
+
+    z-index: 5;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.wish-content {
+    position: relative;
+
+    width:
+        min(900px, 100%);
+
+    z-index: 10;
+
+    opacity: 0;
+
+    transform:
+        translateY(70px);
+
+    filter:
+        blur(12px);
+
+    transition:
+        opacity 1.4s ease,
+        transform 1.4s cubic-bezier(0.16,
+            1,
+            0.3,
+            1),
+        filter 1.4s ease;
+}
+
+.wish-section.active .wish-content {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    filter:
+        blur(0);
+}
+
+
+/* =========================
+   EYEBROW
+========================= */
+
+.wish-eyebrow {
+    margin-bottom: 25px;
+
+    font-size: 8px;
+
+    letter-spacing: 7px;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(255, 255, 255, 0.32);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.wish-title {
+    font-size:
+        clamp(70px,
+            9vw,
+            130px);
+
+    line-height: 0.84;
+
+    font-weight: 400;
+
+    letter-spacing: -8px;
+
+    color:
+        rgba(255, 255, 255, 0.95);
+}
+
+.wish-title span {
+    display: block;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-style: italic;
+
+    color:
+        rgba(255, 255, 255, 0.36);
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.wish-description {
+    max-width: 440px;
+
+    margin:
+        40px auto 0;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 14px;
+
+    font-style: italic;
+
+    line-height: 1.9;
+
+    color:
+        rgba(255, 255, 255, 0.34);
+}
+
+
+/* =========================
+   CAKE AREA
+========================= */
+
+.cake-area {
+    position: relative;
+
+    width: 360px;
+    height: 430px;
+
+    margin:
+        55px auto 20px;
+}
+
+
+/* =========================
+   CAKE SHADOW
+========================= */
+
+.cake-shadow {
+    position: absolute;
+
+    left: 50%;
+    bottom: 45px;
+
+    width: 270px;
+    height: 40px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 0, 0, 0.5);
+
+    filter:
+        blur(18px);
+}
+
+
+/* =========================
+   CAKE PLATE
+========================= */
+
+.cake-plate {
+    position: absolute;
+
+    left: 50%;
+    bottom: 55px;
+
+    width: 300px;
+    height: 24px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        50%;
+
+    background:
+        linear-gradient(180deg,
+            #f5f4f0,
+            #c7c6c1);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   CAKE BODY
+========================= */
+
+.cake {
+    position: absolute;
+
+    left: 50%;
+    bottom: 72px;
+
+    width: 240px;
+    height: 150px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:
+        18px 18px 28px 28px;
+
+    background:
+        linear-gradient(180deg,
+            #f4f2eb 0%,
+            #dedbd2 100%);
+
+    box-shadow:
+        inset 0 -15px 30px rgba(0, 0, 0, 0.08),
+        0 25px 55px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   CAKE TOP
+========================= */
+
+.cake::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: -25px;
+
+    width: 100%;
+    height: 50px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(180deg,
+            #ffffff,
+            #e8e6df);
+}
+
+
+/* =========================
+   CAKE DECORATION
+========================= */
+
+.cake-dot {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(25, 25, 25, 0.18);
+}
+
+.cake-dot-one {
+    left: 42px;
+    top: 68px;
+}
+
+.cake-dot-two {
+    left: 100px;
+    top: 95px;
+}
+
+.cake-dot-three {
+    right: 43px;
+    top: 65px;
+}
+
+.cake-dot-four {
+    right: 90px;
+    top: 115px;
+}
+
+
+/* =========================
+   CANDLE
+========================= */
+
+.candle {
+    position: absolute;
+
+    left: 50%;
+    bottom: 245px;
+
+    width: 18px;
+    height: 95px;
+
+    transform:
+        translateX(-50%);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius:
+        8px 8px 3px 3px;
+
+    background:
+        repeating-linear-gradient(45deg,
+            #f4f2ec 0px,
+            #f4f2ec 7px,
+            #d7d4cc 7px,
+            #d7d4cc 12px);
+
+    box-shadow:
+        0 0 20px rgba(255, 255, 255, 0.05);
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    transition:
+        transform 0.35s ease;
+}
+
+.candle:hover {
+    transform:
+        translateX(-50%) translateY(-4px);
+}
+
+
+/* =========================
+   WICK
+========================= */
+
+.candle-wick {
+    position: absolute;
+
+    left: 50%;
+    top: -12px;
+
+    width: 2px;
+    height: 14px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        #282828;
+}
+
+
+/* =========================
+   FLAME
+========================= */
+
+.flame {
+    position: absolute;
+
+    left: 50%;
+    top: -51px;
+
+    width: 25px;
+    height: 42px;
+
+    transform:
+        translateX(-50%);
+
+    transform-origin:
+        center bottom;
+
+    border-radius:
+        50% 50% 45% 45%;
+
+    background:
+        radial-gradient(circle at 50% 65%,
+            #ffffff 0%,
+            #fff3c6 30%,
+            #f3d582 58%,
+            rgba(240, 209, 115, 0.25) 75%,
+            transparent 100%);
+
+    filter:
+        drop-shadow(0 0 10px rgba(255, 241, 190, 0.85)) drop-shadow(0 0 25px rgba(255, 242, 190, 0.45));
+
+    animation:
+        flameMove 0.55s ease-in-out infinite alternate;
+
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+/* =========================
+   FLAME GLOW
+========================= */
+
+.flame-glow {
+    position: absolute;
+
+    left: 50%;
+    top: -95px;
+
+    width: 150px;
+    height: 150px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(255, 245, 206, 0.18),
+            transparent 65%);
+
+    filter:
+        blur(10px);
+
+    animation:
+        flameGlow 1.3s ease-in-out infinite alternate;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.7s ease;
+}
+
+
+/* =========================
+   CANDLE OFF
+========================= */
+
+.candle.off .flame {
+    opacity: 0;
+
+    transform:
+        translateX(-50%) translateY(-18px) scale(0);
+
+    filter: none;
+
+    animation: none;
+}
+
+.candle.off .flame-glow {
+    opacity: 0;
+}
+
+
+/* =========================
+   SMOKE
+========================= */
+
+.smoke {
+    position: absolute;
+
+    left: 50%;
+    top: -45px;
+
+    width: 9px;
+    height: 9px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(220, 220, 220, 0.35);
+
+    filter:
+        blur(4px);
+
+    opacity: 0;
+}
+
+.candle.off .smoke {
+    animation:
+        smokeRise 2.1s ease-out forwards;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.make-wish-button {
+    position: relative;
+
+    width: 250px;
+    height: 62px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding:
+        0 10px 0 25px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.2);
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color: white;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease,
+        opacity 0.45s ease;
+}
+
+.make-wish-button:hover {
+    transform:
+        translateY(-5px);
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border-color:
+        rgba(255, 255, 255, 0.42);
+}
+
+.make-wish-button span:first-child {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+.wish-button-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #111;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   BUTTON HIDE
+========================= */
+
+.make-wish-button.hide {
+    opacity: 0;
+
+    transform:
+        translateY(15px);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   INSTRUCTION
+========================= */
+
+.wish-instruction {
+    min-height: 25px;
+
+    margin-top: 20px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size: 12px;
+
+    font-style: italic;
+
+    color:
+        rgba(255, 255, 255, 0.28);
+
+    opacity: 0;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.wish-instruction.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+.wish-result {
+    margin-top: 28px;
+
+    opacity: 0;
+
+    transform:
+        translateY(30px);
+
+    filter:
+        blur(8px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease,
+        filter 1.2s ease;
+}
+
+.wish-result.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+    filter:
+        blur(0);
+}
+
+.wish-result-main {
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(35px,
+            5vw,
+            55px);
+
+    font-weight: 400;
+
+    font-style: italic;
+
+    color:
+        rgba(255, 255, 255, 0.9);
+}
+
+.wish-result-small {
+    margin-top: 10px;
+
+    font-size: 8px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    color:
+        rgba(255, 255, 255, 0.26);
+}
+
+
+/* =========================
+   NEXT TEASER
+========================= */
+
+.wish-next {
+    margin-top: 80px;
+
+    opacity: 0;
+
+    transform:
+        translateY(20px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.wish-next.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+.wish-next p {
+    font-family:
+        Georgia,
+        serif;
+
+    font-style: italic;
+
+    font-size: 13px;
+
+    color:
+        rgba(255, 255, 255, 0.3);
+}
+
+.wish-next span {
+    display: block;
+
+    margin-top: 15px;
+
+    color:
+        rgba(255, 255, 255, 0.22);
+
+    animation:
+        wishArrow 1.5s ease-in-out infinite;
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+.wish-particles {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 5;
+}
+
+.wish-particle {
+    position: absolute;
+
+    left: 50%;
+    top: 55%;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 0 10px rgba(255, 255, 255, 0.5);
+
+    animation:
+        wishParticleBurst 1.8s cubic-bezier(0.16,
+            1,
+            0.3,
+            1) forwards;
+}
+
+
+/* =========================
+   DECORATIVE STARS
+========================= */
+
+.wish-star {
+    position: absolute;
+
+    color:
+        rgba(255, 255, 255, 0.12);
+
+    animation:
+        wishStarFloat 6s ease-in-out infinite;
+}
+
+.wish-star-one {
+    top: 32%;
+    left: 12%;
+
+    font-size: 21px;
+}
+
+.wish-star-two {
+    top: 47%;
+    right: 10%;
+
+    font-size: 13px;
+
+    animation-delay:
+        -2s;
+}
+
+.wish-star-three {
+    bottom: 20%;
+    left: 20%;
+
+    font-size: 9px;
+
+    animation-delay:
+        -4s;
+}
+
+
+/* =========================
+   MUSIC CONTROL DARK AGAIN
+========================= */
+
+.music-control.on-wish {
+    border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    background:
+        rgba(10, 10, 12, 0.68);
+
+    color: white;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.25);
+}
+
+.music-control.on-wish .music-status {
+    color:
+        rgba(255, 255, 255, 0.55);
+}
+
+.music-control.on-wish .bar {
+    background:
+        rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+@keyframes flameMove {
+
+    0% {
+        transform:
+            translateX(-50%) rotate(-3deg) scaleY(0.96);
+    }
+
+    100% {
+        transform:
+            translateX(-50%) rotate(4deg) scaleY(1.06);
+    }
+
+}
+
+
+@keyframes flameGlow {
+
+    from {
+        opacity: 0.65;
+
+        transform:
+            translateX(-50%) scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(-50%) scale(1.08);
+    }
+
+}
+
+
+@keyframes smokeRise {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(-50%) translateY(0) scale(0.5);
+    }
+
+    15% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateX(-50%) translateY(-100px) translateX(20px) scale(2.2);
+    }
+
+}
+
+
+@keyframes wishParticleBurst {
+
+    0% {
+        opacity: 1;
+
+        transform:
+            translate(-50%,
+                -50%) scale(0.4);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translate(calc(-50% + var(--wish-x)),
+                calc(-50% + var(--wish-y))) scale(1.2);
+    }
+
+}
+
+
+@keyframes wishStarFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-18px) rotate(15deg);
+    }
+
+}
+
+
+@keyframes wishArrow {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(7px);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .wish-section {
+        min-height: 1100px;
+
+        padding:
+            120px 20px 130px;
+    }
+
+    .wish-section::before {
+        height: 190px;
+    }
+
+    .wish-section-number {
+        top: 75px;
+        right: 25px;
+    }
+
+    .wish-title {
+        font-size: 66px;
+
+        letter-spacing: -4px;
+    }
+
+    .wish-description {
+        max-width: 300px;
+
+        font-size: 13px;
+    }
+
+    .cake-area {
+        width: 310px;
+        height: 410px;
+    }
+
+    .cake {
+        width: 210px;
+        height: 140px;
+    }
+
+    .cake-plate {
+        width: 265px;
+    }
+
+    .make-wish-button {
+        width: 230px;
+    }
+
+    .wish-next {
+        margin-top: 65px;
+    }
+
+}
