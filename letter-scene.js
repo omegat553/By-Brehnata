@@ -93,7 +93,7 @@ letterSection.innerHTML = `
 
 
         <h3 class="letter-dear letter-line">
-            Dear [NAMA DIA],
+            Dear Olivia Wahyuningtyas,
         </h3>
 
 
@@ -169,7 +169,7 @@ letterSection.innerHTML = `
             </span>
 
             <span class="signature-name">
-                [NAMA KAMU] ♡
+                Brehnata
             </span>
 
         </div>

@@ -47,6 +47,51 @@
 
     </button>
 
+    <!-- MUSIC PLAYLIST -->
+    <section class="music-playlist" id="musicPlaylist" aria-hidden="true" aria-label="Music playlist">
+        <div class="playlist-header">
+            <div>
+                <p class="playlist-kicker">NOW PLAYING</p>
+                <h2 class="playlist-title">our little playlist</h2>
+            </div>
+            <button class="playlist-close" id="playlistClose" type="button" aria-label="Close playlist">×</button>
+        </div>
+
+        <div class="playlist-now-playing">
+            <span class="playlist-disc" aria-hidden="true"><span></span></span>
+            <div>
+                <p class="playlist-song-name" id="playlistSongName">About You</p>
+                <p class="playlist-artist" id="playlistArtist">The 1975</p>
+            </div>
+            <button class="playlist-play" id="playlistPlay" type="button" aria-label="Pause current song">❚❚</button>
+        </div>
+
+        <div class="playlist-divider"></div>
+
+        <div class="playlist-list" id="playlistList">
+            <button class="playlist-track active" type="button" data-track="0">
+                <span class="track-index">01</span>
+                <span class="track-details"><strong>About You</strong><small>The 1975</small></span>
+                <span class="track-playing" aria-label="Playing"><i></i><i></i><i></i></span>
+            </button>
+            <button class="playlist-track" type="button" data-track="1">
+                <span class="track-index">02</span>
+                <span class="track-details"><strong>What If I Call</strong><small>Alex Crichton</small></span>
+                <span class="track-playing" aria-hidden="true"><i></i><i></i><i></i></span>
+            </button>
+            <div class="playlist-empty">
+                <span>03</span>
+                <p><strong>Lagu berikutnya</strong><small>Tambahkan file MP3 ke assets/music untuk mengisinya</small></p>
+            </div>
+            <div class="playlist-empty">
+                <span>04</span>
+                <p><strong>Lagu berikutnya</strong><small>Playlist-mu akan muncul di sini</small></p>
+            </div>
+        </div>
+
+        <button class="playlist-mute" id="playlistMute" type="button">Matikan suara</button>
+    </section>
+
 
     <!-- BACKGROUND -->
 
@@ -135,7 +180,7 @@
             <div class="birthday-line"></div>
 
             <p class="birthday-name">
-                YOUR BEST FRIEND
+                Olivia Wahyuningtyas
             </p>
 
             <p class="birthday-message">
@@ -260,7 +305,7 @@
 
                 <div class="photo-frame" data-placeholder="PHOTO 01">
 
-                    <img src="assets/photos/photo-1.jpg" alt="Memory photo 1">
+                    <img src="assets/photos/photo-1.jpeg" alt="Memory photo 1">
 
                 </div>
 
@@ -279,7 +324,7 @@
 
                 <div class="photo-frame" data-placeholder="PHOTO 02">
 
-                    <img src="assets/photos/photo-2.jpg" alt="Memory photo 2">
+                    <img src="assets/photos/photo-2.jpeg" alt="Memory photo 2">
 
                 </div>
 
@@ -298,7 +343,7 @@
 
                 <div class="photo-frame" data-placeholder="PHOTO 03">
 
-                    <img src="assets/photos/photo-3.jpg" alt="Memory photo 3">
+                    <img src="assets/photos/photo-3.jpeg" alt="Memory photo 3">
 
                 </div>
 
@@ -317,7 +362,7 @@
 
                 <div class="photo-frame" data-placeholder="PHOTO 04">
 
-                    <img src="assets/photos/photo-4.jpg" alt="Memory photo 4">
+                    <img src="assets/photos/photo-4.jpeg" alt="Memory photo 4">
 
                 </div>
 
@@ -593,7 +638,7 @@
             <div class="glitch-text-wrapper">
 
                 <p class="chaos-small">
-                    BRO.
+                    Babe...
                 </p>
 
                 <h2 class="glitch-title" data-text="I LITERALLY SAID">
@@ -621,7 +666,7 @@
 
                     <div class="aib-photo-wrapper">
 
-                        <img src="assets/photos/photo-aib.jpg" alt="Funny memory" id="aibPhoto">
+                    <img src="assets/photos/photo-aib.jpeg" alt="Funny memory" id="aibPhoto">
 
                     </div>
 

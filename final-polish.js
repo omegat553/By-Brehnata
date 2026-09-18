@@ -263,19 +263,15 @@
 
     const assetsToPreload = [
 
-        "assets/photos/photo-1.jpg",
+        "assets/photos/photo-1.jpeg",
 
-        "assets/photos/photo-2.jpg",
+        "assets/photos/photo-2.jpeg",
 
-        "assets/photos/photo-3.jpg",
+        "assets/photos/photo-3.jpeg",
 
-        "assets/photos/photo-4.jpg",
+        "assets/photos/photo-4.jpeg",
 
-        "assets/photos/photo-5.jpg",
-
-        "assets/photos/photo-6.jpg",
-
-        "assets/photos/photo-aib.jpg"
+        "assets/photos/photo-aib.jpeg"
 
     ];
 

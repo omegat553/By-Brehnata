@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* Netlify HUD — the badge and owner toolbar Netlify injects on published sites.
    Built inside a srcdoc iframe from the data-* attributes on the injected tag. */
 (() => {
@@ -109,7 +110,7 @@
 
     const NARROW = 600;
 
-    const rootClass = (extra) => {
+    const rootClass = (extra = "") => {
         const c = [];
         if (window.innerWidth < NARROW) c.push("nl-narrow");
         if (extra) c.push(extra);

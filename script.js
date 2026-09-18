@@ -32,6 +32,27 @@ const musicControl =
 const musicStatus =
     document.getElementById("musicStatus");
 
+const musicPlaylist =
+    document.getElementById("musicPlaylist");
+
+const playlistClose =
+    document.getElementById("playlistClose");
+
+const playlistPlay =
+    document.getElementById("playlistPlay");
+
+const playlistMute =
+    document.getElementById("playlistMute");
+
+const playlistSongName =
+    document.getElementById("playlistSongName");
+
+const playlistArtist =
+    document.getElementById("playlistArtist");
+
+const playlistTracks =
+    document.querySelectorAll(".playlist-track");
+
 const scrollHint =
     document.getElementById("scrollHint");
 
@@ -185,6 +206,21 @@ let surpriseOpened =
 
 let musicMuted =
     false;
+
+const musicTracks = [
+    {
+        title: "About You",
+        artist: "The 1975",
+        src: "assets/music/About You Soundtrack.mp3"
+    },
+    {
+        title: "What If I Call",
+        artist: "Alex Crichton",
+        src: "assets/music/Alex Crichton - What If I Call Lyrics.mp3"
+    }
+];
+
+let currentTrackIndex = 0;
 
 let chaosOpened =
     false;
@@ -507,48 +543,119 @@ function playBirthdayMusic() {
    MUSIC CONTROL
 ========================= */
 
+function updateMusicMuteState() {
+
+    birthdayMusic.muted = musicMuted;
+
+    musicControl.classList.toggle("muted", musicMuted);
+    musicStatus.textContent = musicMuted ? "MUTED" : "MUSIC";
+    playlistMute.textContent = musicMuted ? "Nyalakan suara" : "Matikan suara";
+}
+
+function toggleMusicMute() {
+    musicMuted = !musicMuted;
+    updateMusicMuteState();
+}
+
+function setPlaylistOpen(isOpen) {
+    musicPlaylist.classList.toggle("show", isOpen);
+    musicPlaylist.setAttribute("aria-hidden", String(!isOpen));
+    musicControl.setAttribute("aria-expanded", String(isOpen));
+}
+
+function selectTrack(trackIndex) {
+    const track = musicTracks[trackIndex];
+
+    if (!track || trackIndex === currentTrackIndex) {
+        return;
+    }
+
+    currentTrackIndex = trackIndex;
+    birthdayMusic.src = track.src;
+    birthdayMusic.load();
+    birthdayMusic.muted = musicMuted;
+    birthdayMusic.volume = 0.55;
+
+    playlistSongName.textContent = track.title;
+    playlistArtist.textContent = track.artist;
+
+    playlistTracks.forEach((playlistTrack, index) => {
+        playlistTrack.classList.toggle("active", index === trackIndex);
+    });
+
+    birthdayMusic.play().catch((error) => {
+        console.error("Music error:", error);
+    });
+}
+
+musicControl.setAttribute("aria-haspopup", "dialog");
+musicControl.setAttribute("aria-expanded", "false");
+
 musicControl.addEventListener(
     "click",
     () => {
-
-        musicMuted =
-            !musicMuted;
-
-
-        birthdayMusic.muted =
-            musicMuted;
-
-
-        if (
-            musicMuted
-        ) {
-
-            musicControl
-                .classList
-                .add(
-                    "muted"
-                );
-
-            musicStatus.textContent =
-                "MUTED";
-
-        }
-
-        else {
-
-            musicControl
-                .classList
-                .remove(
-                    "muted"
-                );
-
-            musicStatus.textContent =
-                "MUSIC";
-
-        }
-
+        setPlaylistOpen(!musicPlaylist.classList.contains("show"));
     }
 );
+
+playlistClose.addEventListener("click", () => setPlaylistOpen(false));
+
+playlistMute.addEventListener("click", toggleMusicMute);
+
+playlistTracks.forEach((track) => {
+    track.addEventListener("click", () => {
+        selectTrack(Number(track.dataset.track));
+    });
+});
+
+playlistPlay.addEventListener(
+    "click",
+    () => {
+        if (birthdayMusic.paused) {
+            birthdayMusic.play();
+        } else {
+            birthdayMusic.pause();
+        }
+    }
+);
+
+birthdayMusic.addEventListener("play", () => {
+    playlistPlay.textContent = "❚❚";
+    playlistPlay.setAttribute("aria-label", "Pause current song");
+});
+
+birthdayMusic.addEventListener("pause", () => {
+    playlistPlay.textContent = "▶";
+    playlistPlay.setAttribute("aria-label", "Play current song");
+});
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+        if (event.key === "Escape") {
+            setPlaylistOpen(false);
+        }
+    }
+);
+
+document.addEventListener(
+    "click",
+    (event) => {
+        if (
+            musicPlaylist.classList.contains("show") &&
+            !musicPlaylist.contains(event.target) &&
+            !musicControl.contains(event.target)
+        ) {
+            setPlaylistOpen(false);
+        }
+    }
+);
+
+/* Legacy mute action kept for keyboard/other controls. */
+function legacyMusicControl() {
+
+    toggleMusicMute();
+}
 
 
 /* =========================
@@ -1308,7 +1415,7 @@ aibPhoto.addEventListener(
     () => {
 
         aibPhoto.alt =
-            "Put photo-aib.jpg inside assets/photos";
+            "Put photo-aib.jpeg inside assets/photos";
 
     }
 );

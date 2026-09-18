@@ -135,7 +135,7 @@ endingSection.innerHTML = `
             class="final-name"
             id="finalName"
         >
-            [NAMA DIA]
+            Olivia Wahyuningtyas
 
             <span class="final-heart">
                 ♡
@@ -178,7 +178,7 @@ endingSection.innerHTML = `
             MADE WITH WAY TOO MUCH EFFORT BY
 
             <span>
-                [NAMA KAMU]
+                Brehnata
             </span>
         </p>
 
